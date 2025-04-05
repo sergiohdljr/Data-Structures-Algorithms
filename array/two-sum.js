@@ -4,15 +4,15 @@
  * @return {number[]}
  */
 function twoSum(nums, target) {
-  let count = {};
+  let count = new Map()
 
   for (let i = 0; i < nums.length; i++) {
   let complemento = target - nums[i];
 
-  if (count.hasOwnProperty(complemento)) {
-    return [count[complemento], i];
+  if (count.has(complemento)) {
+    return [count.get(complemento), i];
   }
-    count[nums[i]] = i;
+    count.set(nums[i], i)
   }
 }
 
