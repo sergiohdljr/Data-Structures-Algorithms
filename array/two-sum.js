@@ -7,10 +7,9 @@ function twoSum(nums, target) {
   let count = new Map()
 
   for (let i = 0; i < nums.length; i++) {
-  let complemento = target - nums[i];
-
-  if (count.has(complemento)) {
-    return [count.get(complemento), i];
+   
+  if (count.has(target - nums[i])) {
+    return [count.get(target - nums[i]), i];
   }
     count.set(nums[i], i)
   }
